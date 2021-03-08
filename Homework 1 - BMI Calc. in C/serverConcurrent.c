@@ -165,6 +165,7 @@ int readAndCalculateBMI (int fd)
   sprintf(bmiSting, "%f", bmi);
   strcat(result, " Bmi : ");
   strcat(result, bmiSting);
+  //strcat(result, checkBMIValue(bmi));
   if (bytes && write (fd, result, bytes) < 0)
     {
       perror ("Eroare la write() catre client.\n");
@@ -172,3 +173,41 @@ int readAndCalculateBMI (int fd)
     }
   return bytes;
 }
+
+// char * checkBMIValue (float bmi){
+//   char bmiValue[100];
+//   if(bmi < 15)  
+//     {  
+//         strcpy(bmiValue,"Your BMI category is: Starvation"); 
+//     }  
+//     else if(bmi >= 15.1 && bmi <= 17.5)  
+//     {  
+//         strcpy(bmiValue,"Your BMI category is: Anorexic");
+//     }  
+//     else if(bmi >= 17.6 && bmi <= 18.5)  
+//     {  
+//         strcpy(bmiValue,"Your BMI category is: Underweight");
+//     }  
+//     else if(bmi >= 18.6 && bmi <= 24.9)  
+//     {  
+//         strcpy(bmiValue,"Your BMI category is: Ideal");
+//     }  
+//     else if(bmi >= 25 && bmi <= 25.9)  
+//     {  
+//         strcpy(bmiValue,"Your BMI category is: Overweight");
+//     }  
+//     else if(bmi >= 30 && bmi <= 30.9)  
+//     {  
+//         strcpy(bmiValue,"Your BMI category is: Obese");
+//     }  
+//     else if(bmi >= 40)  
+//     {  
+//         strcpy(bmiValue,"Your BMI category is: Morbidly Obese");
+//     }
+//     else  
+//     {  
+//         strcpy(bmiValue,"NaN");
+//     }
+
+//     return bmiValue;
+// }
