@@ -35,6 +35,19 @@ function update(id, student){
         // resolve(student)
     })
 }
+function removeAll(){
+    return new Promise((resolve,reject)=>{
+        students = []
+        //const index = students.findIndex((s)=>s.id === id)
+        //students[index] = {id, ...student}
+        // const newStudent = {id:uuidv4(), ...student}
+        // students.push(newStudent)
+        writeDataToFile('./data/students.json',students)
+        resolve()
+        // const student = students.find((s) => s.id === id)
+        // resolve(student)
+    })
+}
 function remove(id){
     return new Promise((resolve,reject)=>{
         students = students.filter((s) => s.id !== id)
@@ -54,5 +67,6 @@ module.exports = {
     findById,
     create,
     update,
-    remove
+    remove,
+    removeAll
 }

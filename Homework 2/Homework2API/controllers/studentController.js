@@ -34,7 +34,7 @@ async function getStudent(req,res,id){
         console.log(error)
     }
 }
-//@desc Create a single students
+//@desc Create a single student
 //@route POST /api/student
 async function createStudent(req,res){
     try{
@@ -59,7 +59,8 @@ async function createStudent(req,res){
         console.log(error)
     }
 }
-//@desc Update a single students
+
+//@desc Update a single student
 //@route PUT /api/student
 async function updateStudent(req,res,id){
     try{
@@ -93,7 +94,7 @@ async function updateStudent(req,res,id){
     }
 }
 
-//@desc Remove a single students
+//@desc Remove a single student
 //@route DELETE /api/student/:id
 async function removeStudent(req,res,id){
     try{
@@ -114,10 +115,44 @@ async function removeStudent(req,res,id){
     }
 }
 
+//@desc Remove all students
+//@route DELETE /api/student/:id
+async function removeAllStudents(req,res){
+    try{
+        await Student.removeAll()
+        res.writeHead(200,{'Content-Type':'application/json'})
+        res.end(JSON.stringify({message:`All students removed`}))
+        // console.log(id)
+        // const student = await Student.findById(id)
+        // if(!student){
+        //     res.writeHead(404,{'Content-Type':'application/json'})
+        //     res.end(JSON.stringify({message : 'Student not found'}))
+        // }
+        // else{
+        //     await Student.remove(id)
+        //     res.writeHead(200,{'Content-Type':'application/json'})
+        //     res.end(JSON.stringify({message:`Student ${id} removed`}))
+        // }
+    }
+    catch(error){
+        console.log(error)
+    }
+
+    // try{
+    //     const students = await Student.findAll()
+    //     res.writeHead(200,{'Content-Type':'application/json'})
+    //     res.end(JSON.stringify(students))
+    // }
+    // catch(error){
+    //     console.log(error)
+    // }
+}
+
 module.exports = {
     getStudents,
     getStudent,
     createStudent,
     updateStudent,
-    removeStudent
+    removeStudent,
+    removeAllStudents
 }
