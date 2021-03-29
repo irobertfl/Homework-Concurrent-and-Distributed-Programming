@@ -151,30 +151,10 @@ async function removeAllStudents(req,res){
         await Student.removeAll()
         res.writeHead(200,{'Content-Type':'application/json'})
         res.end(JSON.stringify({message:`All students removed`}))
-        // console.log(id)
-        // const student = await Student.findById(id)
-        // if(!student){
-        //     res.writeHead(404,{'Content-Type':'application/json'})
-        //     res.end(JSON.stringify({message : 'Student not found'}))
-        // }
-        // else{
-        //     await Student.remove(id)
-        //     res.writeHead(200,{'Content-Type':'application/json'})
-        //     res.end(JSON.stringify({message:`Student ${id} removed`}))
-        // }
     }
     catch(error){
         console.log(error)
     }
-
-    // try{
-    //     const students = await Student.findAll()
-    //     res.writeHead(200,{'Content-Type':'application/json'})
-    //     res.end(JSON.stringify(students))
-    // }
-    // catch(error){
-    //     console.log(error)
-    // }
 }
 
 module.exports = {

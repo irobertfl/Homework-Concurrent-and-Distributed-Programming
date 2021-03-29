@@ -18,7 +18,6 @@ const server = http.createServer((req,res) => {
         createStudent(req,res)
     }
     else if(req.url === '/api/students/multi' && req.method === 'POST'){
-        //const id = req.url.split('/')[3]
         createMultipleStudents(req,res)
     }
     else if(req.url.match(/\/api\/students\/([0-9]+)/) && req.method === 'PUT'){
@@ -30,17 +29,12 @@ const server = http.createServer((req,res) => {
         removeStudent(req,res,id)
     }
     else if(req.url === '/api/students' && req.method === 'DELETE'){
-        //const id = req.url.split('/')[3]
         removeAllStudents(req,res)
     }
     else{
         res.writeHead(404,{'Content-Type':'application/json'})
         res.end(JSON.stringify({message:'Route not found'}))
     }
-    // res.statusCode = 200
-    // res.setHeader('Content-Type','text/html')
-    // res.write('<h1>Hello World</h1>')
-    // res.end()
 })
 
 const PORT = process.env.PORT || 5000

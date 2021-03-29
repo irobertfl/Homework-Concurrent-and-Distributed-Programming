@@ -1,1 +1,29 @@
-[{"id":"5a1eab39-5a24-49c9-8bec-507d04e22270","name":"Popescu Ion","university":"Alexandru Ioan Cuza","faculty":"Computer Science","phone":"0756234182","address":"Str. Ion Creanga nr.2, Iasi,Iasi,Romania","email":"popecu.ion@gmail.com"},{"id":"822c7337-38e0-4fd6-a2c8-a71e5e8c69f5","name":"Grigorescu Mihai","university":"Alexandru Ioan Cuza","faculty":"Biology","phone":"0761234213","address":"Str. Ion Creanga nr.2, Iasi,Iasi,Romania","email":"grigorescu.mihai@gmail.com"}]
+[
+    {
+        "id":"1",
+        "name":"Popescu Ion",
+        "university":"Alexandru Ioan Cuza",
+        "faculty":"Computer Science",
+        "phone":"0756234182",
+        "address":"Str. Ion Creanga nr.2, Iasi,Iasi,Romania",
+        "email":"popecu.ion@gmail.com"
+    },
+    {
+        "id":"2",
+        "name":"Grigorescu Mihai",
+        "university":"Alexandru Ioan Cuza",
+        "faculty":"Biology",
+        "phone":"0761234213",
+        "address":"Str. Ion Creanga nr.2, Iasi,Iasi,Romania",
+        "email":"grigorescu.mihai@gmail.com"
+    },
+    {
+        "id":"3",
+        "name":"Scurtu Andreea",
+        "university":"Gheorghe Asachi",
+        "faculty":"Computer Science",
+        "phone":"0728123412",
+        "address":"Str. Ion Creanga nr.2, Iasi,Iasi,Romania",
+        "email":"scurtu.andreea@outlook.com"
+    }
+]
