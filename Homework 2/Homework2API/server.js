@@ -1,6 +1,6 @@
 const http = require('http')
 const students = require('./data/students')
-const {getStudents, getStudent, createStudent, updateStudent, removeStudent, removeAllStudents} = require('./controllers/studentController')
+const {getStudents, getStudent, createStudent, updateStudent, removeStudent, removeAllStudents,createMultipleStudents} = require('./controllers/studentController')
 
 const server = http.createServer((req,res) => {
     
@@ -17,6 +17,10 @@ const server = http.createServer((req,res) => {
     else if(req.url === '/api/students' && req.method === 'POST'){
         createStudent(req,res)
     }
+    else if(req.url === '/api/students/multi' && req.method === 'POST'){
+        //const id = req.url.split('/')[3]
+        createMultipleStudents(req,res)
+    }
     else if(req.url.match(/\/api\/students\/([0-9]+)/) && req.method === 'PUT'){
         const id = req.url.split('/')[3]
         updateStudent(req,res,id)
@@ -26,7 +30,7 @@ const server = http.createServer((req,res) => {
         removeStudent(req,res,id)
     }
     else if(req.url === '/api/students' && req.method === 'DELETE'){
-        const id = req.url.split('/')[3]
+        //const id = req.url.split('/')[3]
         removeAllStudents(req,res)
     }
     else{

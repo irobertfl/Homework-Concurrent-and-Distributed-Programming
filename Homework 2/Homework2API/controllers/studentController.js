@@ -59,6 +59,35 @@ async function createStudent(req,res){
         console.log(error)
     }
 }
+//@desc Create multiple student
+//@route POST /api/student
+async function createMultipleStudents(req,res){
+    try{
+        const body = await getPostData(req)
+        var newStudents = JSON.parse(body)
+        newStudents.forEach(async newStudent => {
+            const {name,university,faculty,phone,address,email} = newStudent
+
+            const student = {
+                name,
+                university,
+                faculty,
+                phone,
+                address,
+                email
+            }
+            const newStudentInsert = await Student.create(student)
+            
+
+            console.log(newStudent)
+        });
+        res.writeHead(201,{'Content-Type':'application/json'})
+        return res.end(JSON.stringify(newStudents))
+    }
+    catch(error){
+        console.log(error)
+    }
+}
 
 //@desc Update a single student
 //@route PUT /api/student
@@ -152,6 +181,7 @@ module.exports = {
     getStudents,
     getStudent,
     createStudent,
+    createMultipleStudents,
     updateStudent,
     removeStudent,
     removeAllStudents
