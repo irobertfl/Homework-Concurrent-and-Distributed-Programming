@@ -1,0 +1,11 @@
+steps:
+#Install
+- name : 'gcr.io/cloud-builders/npm'
+  args : ['install']
+#Build
+- name : 'gcr.io/cloud-builders/npm'
+  args : ['run','build']
+#Deploy
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'
+  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy client.yaml']
