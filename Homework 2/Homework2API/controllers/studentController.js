@@ -27,8 +27,6 @@ async function getStudent(req,res,id){
             res.end(JSON.stringify(student))
 
         }
-
-        
     }
     catch(error){
         console.log(error)

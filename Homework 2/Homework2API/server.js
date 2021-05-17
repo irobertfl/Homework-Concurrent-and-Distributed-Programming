@@ -8,7 +8,7 @@ const server = http.createServer((req,res) => {
         //Get all the students
         getStudents(req,res)
     }
-    else if(req.url.match(/\/api\/students\/([0-9]+)/) && req.method === 'GET'){
+    else if(req.url.match(/\/api\/students\/([0-z]+)/) && req.method === 'GET'){
         const id = req.url.split('/')[3]
         console.log(id)
         getStudent(req,res,id)
@@ -20,11 +20,11 @@ const server = http.createServer((req,res) => {
     else if(req.url === '/api/students/multi' && req.method === 'POST'){
         createMultipleStudents(req,res)
     }
-    else if(req.url.match(/\/api\/students\/([0-9]+)/) && req.method === 'PUT'){
+    else if(req.url.match(/\/api\/students\/([0-z]+)/) && req.method === 'PUT'){
         const id = req.url.split('/')[3]
         updateStudent(req,res,id)
     }
-    else if(req.url.match(/\/api\/students\/([0-9]+)/) && req.method === 'DELETE'){
+    else if(req.url.match(/\/api\/students\/([0-z]+)/) && req.method === 'DELETE'){
         const id = req.url.split('/')[3]
         removeStudent(req,res,id)
     }
